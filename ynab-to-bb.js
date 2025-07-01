@@ -1,11 +1,21 @@
 import fs from 'fs';
 
-const INPUT_FILE = 'Monthly Budget as of 2025-07-01 15-36 - Register.csv'; // The YNAB register csv file.
-const OUTPUT_DIR = 'output';
-const RECORDS_PER_FILE = 90; // We only put 90 per file to cater BB limitation
+const INPUT_FILE = process.argv[2];
+const OUTPUT_DIR = process.argv[3] || 'output';
+const RECORDS_PER_FILE = 90;
 
-if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
+if (!INPUT_FILE) {
+  console.error('Error: Input file is required.');
+  console.log('Usage: node split_transactions.js <input_file> [output_dir]');
+  process.exit(1);
+}
 
+// Create output directory if it doesn't exist
+if (!fs.existsSync(OUTPUT_DIR)) {
+  fs.mkdirSync(OUTPUT_DIR);
+}
+
+// Read the CSV file
 const csvData = fs.readFileSync(INPUT_FILE, 'utf8');
 const lines = csvData.split(/\r?\n/);
 const header = lines[0];
@@ -18,7 +28,7 @@ for (let i = 0; i < totalFiles; i++) {
   const endIdx = startIdx + RECORDS_PER_FILE;
   const chunk = records.slice(startIdx, endIdx);
   const output = [header, ...chunk].join('\n');
-  const filename = `(${i}) Monthly Budget.csv`;
+  const filename = `(${i+1}) Monthly Budget.csv`;
   const filePath = `${OUTPUT_DIR}/${filename}`;
   fs.writeFileSync(filePath, output, 'utf8');
   console.log(`Created: ${filePath}`);
