@@ -5,7 +5,7 @@ A simple Node.js script to split large YNAB (You Need A Budget) register CSV exp
 ---
 
 ## Features
-- Splits large CSV files into smaller chunks (default: 450 records per file)
+- Splits large CSV files into smaller chunks (default: 250 records per file)
 - Output files are saved in a dedicated directory
 - Easy to use from the command line
 - Includes guidance for preparing your data for best results
@@ -93,19 +93,19 @@ Account,Date,Payee,Category,Notes,Amount
 
 | Account           | Flag | Date      | Payee | Category Group/Category | Category Group | Category | Memo | Outflow | Inflow | Amount |
 |-------------------|------|-----------|-------|------------------------|----------------|----------|------|---------|--------|--------|
-| UB Platinum 2191  |      | 8/1/2025  |       | Subscriptions: 💪🏻 Gym | Subscriptions  | Gym      |      | 4505    | 0      | -4505  |
+| UB Platinum 2191  |      | 8/1/2025  |       | Subscriptions: 💪🏻 Gym | Subscriptions  | Gym      |      | 2505    | 0      | -2505  |
 
 **Sanitized Register Row:**
 
 | Account           | Date       | Payee | Category | Notes | Amount |
 |-------------------|------------|-------|----------|-------|--------|
-| UB Platinum 2191  | 2025-08-01 |       | Gym      |       | -4505  |
+| UB Platinum 2191  | 2025-08-01 |       | Gym      |       | -2505  |
 
 ---
 
 ## Output
 - Output files will be saved in the specified output directory (default: `output`)
-- Each file will contain up to 450 records (customizable in the script)
+- Each file will contain up to 250 records (customizable in the script)
 - Files are named `(1) Monthly Budget.csv`, `(2) Monthly Budget.csv`, etc.
 
 ---
