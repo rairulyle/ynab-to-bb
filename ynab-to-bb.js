@@ -2,7 +2,7 @@ import fs from 'fs';
 
 const INPUT_FILE = process.argv[2];
 const OUTPUT_DIR = process.argv[3] || 'output';
-const RECORDS_PER_FILE = 450;
+const RECORDS_PER_FILE = 250;
 
 if (!INPUT_FILE) {
   console.error('Error: Input file is required.');
