@@ -1,6 +1,6 @@
 # YNAB Register CSV Splitter
 
-A simple Node.js script to split large YNAB (You Need A Budget) register CSV exports into smaller, BB (Beyond Budget) import-friendly files. This helps you prepare your data for import into Beyond Budget and similar budgeting tools.
+A simple Node.js script to split large YNAB (You Need A Budget) register CSV exports into smaller, BB (Beyond Budget) import-friendly files. This helps you prepare your data for import into Beyond Budget.
 
 ---
 
