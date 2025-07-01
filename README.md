@@ -24,14 +24,14 @@ A simple Node.js script to split large YNAB (You Need A Budget) register CSV exp
 1. **Prepare your sanitized CSV file** (see below for instructions)
 2. **Run the script from your terminal:**
    ```sh
-   node split_transactions.js <input_file.csv> [output_dir]
+   node ynab-to-bb.js <input_file.csv> [output_dir]
    ```
    - `<input_file.csv>`: Path to your sanitized CSV file
    - `[output_dir]` (optional): Directory to save output files (default: `output`)
 
    **Example:**
    ```sh
-   node split_transactions.js "Monthly Budget as of 2025-07-01 15-36 - Register.csv"
+   node ynab-to-bb.js "Monthly Budget as of 2025-07-01 15-36 - Register.csv"
    ```
 
 3. **Check the output directory** for your split files.
