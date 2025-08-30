@@ -47,7 +47,7 @@ Before running the script, convert your original YNAB register export to the fol
 
 ### Original YNAB Register Columns
 ```
-Account,Flag,Date RAW,Date,Payee,Category Group/Category,Category Group,Category RAW,Category,Memo,Outflow,Inflow,Amount
+Account,Flag,Date,Payee	Category Group/Category,Category Group,Category,Memo,Outflow,Inflow,Amount
 ```
 
 ### Sanitized Register Columns (BB Friendly Format)
